@@ -1,0 +1,25 @@
+server:
+  port: 8089
+
+
+spring:
+  application:
+    name: msc-gateway
+
+
+eureka:
+  instance:
+    hostname: msc-eureka2
+
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://msc-eureka1:8000/eureka/,http://msc-eureka2:8001/eureka/
+
+zuul:
+  ##忽略指定服务，多个用逗号隔开
+  ignored-services: msc-eureka

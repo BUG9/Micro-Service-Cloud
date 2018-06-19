@@ -35,3 +35,7 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: http://msc-eureka1:8000/eureka/
+
+  server:
+    # 关闭自我保护模式
+    enable-self-preservation: false
