@@ -1,0 +1,10 @@
+
+spring:
+  application:
+    name: msc-eureka
+  profiles:
+    active: node-1
+
+
+
+

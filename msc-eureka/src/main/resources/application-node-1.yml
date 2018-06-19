@@ -1,0 +1,39 @@
+server:
+  port: 8000
+mail:
+  fromMail:
+    ##发送邮件地址
+    sender: zhciot@163.com
+    ##接收邮件地址
+    receiver: 1161650078@qq.com
+
+
+spring:
+  application:
+    name: msc-eureka
+  mail:
+    ##邮箱服务器地址
+    ##QQ smtp.qq.com
+    ##sina smtp.sina.cn
+    ##aliyun smtp.aliyun.com
+    ##163 smtp.163.com
+    host: smtp.163.com
+    username: zhciot@163.com
+    ##切记该密码为授权码，并非邮箱密码
+    password: zhao324
+    default-encoding: UTF-8
+
+eureka:
+  instance:
+    hostname: msc-eureka1
+    ##以IP地址形式展示
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+    ##该配置表示以IP形式注册，但在实际集群时，配置该属性会导致unavailable（不可用）
+    ##prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://msc-eureka2:8001/eureka/
+
+
