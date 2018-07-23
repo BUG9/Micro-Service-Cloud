@@ -11,6 +11,8 @@ import springfox.documentation.swagger.web.SwaggerResourcesProvider;
 
 /**
  * Created by jingxian on 2018/6/19.
+ *
+ * 整合分布式系统的swagger
  */
 @Component
 @Primary

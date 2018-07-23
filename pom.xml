@@ -20,6 +20,9 @@
 
 	<modules>
 		<module>msc-eureka</module>
+		<module>msc-gateway</module>
+		<module>msc-common</module>
+		<module>msc-auth</module>
 	</modules>
 
 	<properties>

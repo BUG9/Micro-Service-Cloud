@@ -27,6 +27,7 @@
 			<artifactId>spring-cloud-starter-zuul</artifactId>
 		</dependency>
 
+
 	</dependencies>
 
 	<build>

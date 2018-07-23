@@ -1,5 +1,6 @@
 package com.zhc.msceureka.email;
 
+import java.util.concurrent.TimeUnit;
 import javax.annotation.Resource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,6 +26,7 @@ public class EmailService {
     @Resource
     private JavaMailSender javaMailSender;
 
+    private Long lastTime;
 
     public String sendMail(String subject, String text) {
         SimpleMailMessage message = new SimpleMailMessage();
@@ -32,11 +34,15 @@ public class EmailService {
         message.setTo(receiver);
         message.setSubject(subject);
         message.setText(text);
-        try {
-            javaMailSender.send(message);
-            logger.info("邮件已经发送。");
-        } catch (Exception e) {
-            logger.error("发送邮件时发生异常！", e);
+
+        if (lastTime == null || System.currentTimeMillis() - lastTime > TimeUnit.MINUTES.toMillis(5)){// 间隔5分钟才能发送一次
+            try {
+                javaMailSender.send(message);
+                lastTime = System.currentTimeMillis();
+                logger.info("邮件已经发送。");
+            } catch (Exception e) {
+                logger.error("发送邮件时发生异常！", e);
+            }
         }
         return "success";
     }
