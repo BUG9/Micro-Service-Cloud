@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.zhc</groupId>
-	<artifactId>Micro-Service-Cloud</artifactId>
+	<artifactId>micro-service-cloud</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-	<name>Micro-Service-Cloud</name>
+	<name>micro-service-cloud</name>
 	<description>517 Demo project for Spring Boot</description>
 
 	<parent>
@@ -26,7 +26,7 @@
 	</modules>
 
 	<properties>
-		<docker.image.prefix>Micro-Service-Cloud</docker.image.prefix>
+		<docker.image.prefix>micro-service-cloud</docker.image.prefix>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>

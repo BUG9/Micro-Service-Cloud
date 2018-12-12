@@ -2,7 +2,6 @@ package com.zhc.mscauth.config;
 
 import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -31,6 +30,7 @@ public class AuthorizationServerConfig  extends AuthorizationServerConfigurerAda
 
     @Autowired
     private DataSource dataSource;
+
     @Autowired
     private UserDetailsServiceImpl userDetailsService;
 
@@ -38,9 +38,19 @@ public class AuthorizationServerConfig  extends AuthorizationServerConfigurerAda
     private RedisConnectionFactory redisConnectionFactory;
 
 
+
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients.withClientDetails(clientDetails());  // 配置客户端认证方式，使用内存方式配置应用inMemory()
+//        clients.inMemory()
+//                .withClient("browaser")
+//                .authorizedGrantTypes("refresh_token", "password") //配置了验证类型为 refresh_token 和 password
+//                .scopes("ui")   //配置客户端域为 “ ui ”
+//                .and()
+//                .withClient("service-ui")
+//                .secret("123456")
+//                .authorizedGrantTypes("client_credentials", "refresh_token", "password")
+//                .scopes("server");
     }
 
     @Bean
@@ -54,9 +64,10 @@ public class AuthorizationServerConfig  extends AuthorizationServerConfigurerAda
     }
 
     /**
-     * <p>注意，自定义TokenServices的时候，需要设置@Primary，否则报错，</p>
+     * 注意，自定义TokenServices的时候，需要设置@Primary，否则报错
      */
-    @Primary
+    @Primary    // https://blog.csdn.net/doctor_who2004/article/details/75330934 有关Primary注解导致问题可查看该博客
+                // @Primary注解的实例优先于其他实例被注入
     @Bean
     public DefaultTokenServices defaultTokenServices(){
         DefaultTokenServices tokenServices = new DefaultTokenServices();

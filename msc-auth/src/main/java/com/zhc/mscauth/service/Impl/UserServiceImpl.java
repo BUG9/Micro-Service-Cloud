@@ -11,7 +11,7 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Service
 @Slf4j  //  不想每次都写;private  final Logger logger = LoggerFactory.getLogger(XXX.class) 可以用注解@Slf4j
-public class UserServiceImpl implements UserService
+public class UserServiceImpl implements UserService{
 
     @Override
     public Result<UserVo> findByUsername(String username) {

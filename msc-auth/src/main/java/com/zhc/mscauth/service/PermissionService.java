@@ -12,7 +12,7 @@ import com.zhc.msccommon.Model.Vo.Result;
 /**
  * Created by jingxian on 2018/7/17.
  */
-@FeignClient(name = "mss-upms", fallback = PermissionServiceImpl.class)
+@FeignClient(name = "mss-dataservice", fallback = PermissionServiceImpl.class)
 public interface PermissionService {
     @GetMapping("permission/getRolePermission/{roleId}")
     Result<List<MenuVo>> getRolePermission(@PathVariable("roleId") Integer roleId);

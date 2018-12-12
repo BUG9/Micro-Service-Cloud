@@ -12,7 +12,7 @@ import com.zhc.msccommon.Model.Vo.RoleVo;
 /**
  * Created by jingxian on 2018/7/17.
  */
-@FeignClient(name = "mss-upms", fallback = RoleServiceImpl.class)
+@FeignClient(name = "mss-dataservice", fallback = RoleServiceImpl.class)
 public interface RoleService {
     @GetMapping("role/getRoleByUserId/{userId}")
     Result<List<RoleVo>> getRoleByUserId(@PathVariable("userId") Integer userId);

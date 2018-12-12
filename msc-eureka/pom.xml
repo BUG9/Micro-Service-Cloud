@@ -4,14 +4,14 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>com.zhc</groupId>
-		<artifactId>Micro-Service-Cloud</artifactId>
+		<artifactId>micro-service-cloud</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
 	 </parent>
-	<artifactId>Micro-Service-Cloud-Eureka</artifactId>
+	<artifactId>micro-service-cloud-eureka</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>Micro-Service-Cloud-Eureka</name>
+	<name>micro-service-cloud-eureka</name>
 	<description>Demo project for Spring Boot</description>
 
 	<dependencies>
@@ -51,7 +51,7 @@
 				<configuration>
 					<imageName>${docker.image.prefix}/${project.artifactId}</imageName>
 					<dockerDirectory>${project.basedir}/</dockerDirectory>
-					<dockerHost>http://39.104.164.214:10000</dockerHost>
+					<dockerHost>http://39.104.164.214:2375</dockerHost>
 					<resources>
 						<resource>
 							<targetPath>/</targetPath>

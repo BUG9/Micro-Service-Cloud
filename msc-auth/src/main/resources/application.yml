@@ -4,13 +4,13 @@ spring:
 
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/spring-cloud-oauth2 ? useUnicode=true & characterEncoding=utf8 & characterSetResults=utf8
+    url: jdbc:mysql://39.104.164.214:3306/spring-cloud-oauth2 ? useUnicode=true & characterEncoding=utf8 & characterSetResults=utf8
     username: root
-    password:
+    password: PW324
 
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
     show-sql: true
 
 
@@ -31,4 +31,28 @@ eureka:
     service-url:
         defaultZone: http://msc-eureka1:8000/eureka/,http://msc-eureka2:8001/eureka/
 
+logging:
+  config: classpath:logback.xml
+  level:
+    org:
+      springframework:
+        web: info
 
+###feign 默认关闭熔断，请看HystrixFeignConfiguration
+feign:
+  hystrix:
+    enabled: true
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
+
+ribbon:
+  ReadTimeout: 30000
+  ConnectTimeout: 60000
+  MaxAutoRetries: 0
+  MaxAutoRetriesNextServer: 1
