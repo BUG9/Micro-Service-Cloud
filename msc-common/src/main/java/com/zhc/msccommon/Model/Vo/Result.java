@@ -68,7 +68,7 @@ public class Result<T> implements Serializable {
     }
 
     public Result() {
-        exend = new HashMap<>();
+        exend = new HashMap<String,Object>();
     }
 
     public static Result failure(int code, String msg) {

@@ -1,0 +1,34 @@
+server:
+  port: 8888
+
+eureka:
+  instance:
+    hostname: registry
+    prefer-ip-address: true
+    ip-address: 39.104.164.214
+
+  client:
+    service-url:
+        defaultZone: http://msc-eureka-1:8000/eureka/
+
+spring:
+  application:
+    name: SpringCloudConfig
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitlab.com/ape_savant/config-repo.git
+          search-paths: /**
+      username:
+      password:
+  rabbitmq:
+    host: 39.104.164.214
+    port: 5672
+    username: guest
+    password: guest
+
+security:
+   user:
+     name: yuanxueba
+     password: yuanxueba

@@ -10,7 +10,7 @@ import com.zhc.msccommon.Model.Vo.UserVo;
 /**
  * Created by jingxian on 2018/7/17.
  */
-@FeignClient(name = "mss-dataservice", fallback = UserServiceImpl.class)
+@FeignClient(name = "ms-dataservice", fallback = UserServiceImpl.class)
 public interface UserService {
     @GetMapping("user/findByUsername/{username}")
     Result<UserVo> findByUsername(@PathVariable("username") String username);

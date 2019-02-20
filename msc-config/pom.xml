@@ -6,29 +6,45 @@
 		<groupId>com.zhc</groupId>
 		<artifactId>Micro-Service-Cloud</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
-	 </parent>
-	<artifactId>micro-service-cloud-eureka</artifactId>
+	</parent>
+	<artifactId>micro-service-cloud-config</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>micro-service-cloud-eureka</name>
+	<name>msc-config</name>
 	<description>Demo project for Spring Boot</description>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-eureka-server</artifactId>
+			<artifactId>spring-cloud-config-server</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<!-- 动态刷新配置-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
-		<!--邮件 -->
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-mail</artifactId>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-bus-amqp</artifactId>
 		</dependency>
 	</dependencies>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 	<build>
 		<plugins>
@@ -51,7 +67,7 @@
 				<configuration>
 					<imageName>${docker.image.prefix}/${project.artifactId}</imageName>
 					<dockerDirectory>${project.basedir}/</dockerDirectory>
-					<dockerHost>http://39.104.164.214:2375</dockerHost>
+					<dockerHost>http://39.104.164.214:2376</dockerHost>
 					<resources>
 						<resource>
 							<targetPath>/</targetPath>
@@ -63,4 +79,6 @@
 			</plugin>
 		</plugins>
 	</build>
+
+
 </project>

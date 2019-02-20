@@ -1,7 +1,7 @@
 
 spring:
   profiles:
-    active: node1
+    active: msc-eureka-1
   application:
     name: msc-eureka
   mail:
@@ -24,37 +24,37 @@ mail:
 
 ---
 spring:
-  profiles: node1
+  profiles: msc-eureka-1
 
 server:
   port: 8000
 
 eureka:
   instance:
-    hostname: node1
+    hostname: msc-eureka-1
     ##以IP地址形式展示
     instance-id: ${spring.cloud.client.ipAddress}:${server.port}
     ##该配置表示以IP形式注册，但在实际集群时，配置该属性会导致unavailable（不可用）
     ##prefer-ip-address: true
   client:
-    register-with-eureka: true
-    fetch-registry: true
+    register-with-eureka: false  # 当前的微服务不注册到eureka之中
+    fetch-registry: false # 不通过eureka获取注册信息
     service-url:
-          defaultZone: http://node2:8001/eureka/
+          defaultZone: http://msc-eureka-2:8001/eureka/
   server:
       # 关闭自我保护模式
     enable-self-preservation: false
 
 ---
 spring:
-  profiles: node2
+  profiles: msc-eureka-2
 
 server:
   port: 8001
 
 eureka:
   instance:
-    hostname: node2
+    hostname: msc-eureka-2
     ##以IP地址形式展示
     instance-id: ${spring.cloud.client.ipAddress}:${server.port}
     ##该配置表示以IP形式注册，但在实际集群时，配置该属性会导致unavailable（不可用）
@@ -63,7 +63,7 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-          defaultZone: http://node1:8000/eureka/
+          defaultZone: http://msc-eureka-1:8000/eureka/
   server:
       # 关闭自我保护模式
     enable-self-preservation: false

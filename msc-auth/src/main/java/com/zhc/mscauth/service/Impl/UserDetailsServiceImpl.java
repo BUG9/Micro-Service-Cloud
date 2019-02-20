@@ -35,13 +35,12 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     private PermissionService permissionService;
 
 
-    @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Result<UserVo> userResult = userService.findByUsername(username);
         if (userResult.getCode() == 100) {
             throw new UsernameNotFoundException("用户:" + username + ",不存在!");
         }
-        Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
+        Set<GrantedAuthority> grantedAuthorities = new HashSet<GrantedAuthority>();
         boolean enabled = true; // 可用性 :true:可用 false:不可用
         boolean accountNonExpired = true; // 过期性 :true:没过期 false:过期
         boolean credentialsNonExpired = true; // 有效性 :true:凭证有效 false:凭证无效

@@ -23,9 +23,9 @@ public class GatewaySwaggerResourcesProvider implements SwaggerResourcesProvider
         this.routeLocator = routeLocator;
     }
 
-    @Override
+
     public List<SwaggerResource> get() {
-        List<SwaggerResource> resources = new ArrayList<>();
+        List<SwaggerResource> resources = new ArrayList<SwaggerResource>();
         List<Route> routes = routeLocator.getRoutes();
         for (Route route:routes) {
             resources.add(swaggerResource(route.getId(), route.getFullPath().replace("**", "v2/api-docs")));

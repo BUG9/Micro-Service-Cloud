@@ -41,7 +41,8 @@ public class AuthorizationServerConfig  extends AuthorizationServerConfigurerAda
 
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-        clients.withClientDetails(clientDetails());  // 配置客户端认证方式，使用内存方式配置应用inMemory()
+        clients.withClientDetails(clientDetails());
+        // 配置客户端认证方式，使用内存方式配置应用inMemory()
 //        clients.inMemory()
 //                .withClient("browaser")
 //                .authorizedGrantTypes("refresh_token", "password") //配置了验证类型为 refresh_token 和 password

@@ -29,7 +29,7 @@ eureka:
 
   client:
     service-url:
-        defaultZone: http://msc-eureka1:8000/eureka/,http://msc-eureka2:8001/eureka/
+        defaultZone: http://msc-eureka-1:8000/eureka/
 
 logging:
   config: classpath:logback.xml
