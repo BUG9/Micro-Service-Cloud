@@ -16,10 +16,10 @@ import org.springframework.stereotype.Service;
 import com.zhc.mscauth.service.PermissionService;
 import com.zhc.mscauth.service.RoleService;
 import com.zhc.mscauth.service.UserService;
-import com.zhc.msccommon.Model.Vo.MenuVo;
-import com.zhc.msccommon.Model.Vo.Result;
-import com.zhc.msccommon.Model.Vo.RoleVo;
-import com.zhc.msccommon.Model.Vo.UserVo;
+import com.zhc.msccommon.model.vo.MenuVo;
+import com.zhc.msccommon.model.vo.Result;
+import com.zhc.msccommon.model.vo.RoleVo;
+import com.zhc.msccommon.model.vo.UserVo;
 
 /**
  * Created by jingxian on 2018/7/18.

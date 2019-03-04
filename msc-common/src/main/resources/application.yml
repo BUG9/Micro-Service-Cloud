@@ -1,0 +1,19 @@
+server:
+  port: 8888
+
+filePath: /var/www/html/app/
+##filePath: E:\MyDownloads\Download\
+
+spring:
+  application:
+    name: MscCommonService
+
+eureka:
+  instance:
+    hostname: msccommon
+    prefer-ip-address: true
+    ip-address: 39.104.164.214
+
+  client:
+    service-url:
+        defaultZone: http://msc-eureka-1:8000/eureka/

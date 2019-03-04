@@ -1,4 +1,4 @@
-package com.zhc.msccommon.Model.Vo;
+package com.zhc.msccommon.model.vo;
 
 import java.util.Date;
 import com.fasterxml.jackson.annotation.JsonInclude;

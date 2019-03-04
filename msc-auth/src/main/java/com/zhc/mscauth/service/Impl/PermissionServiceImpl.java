@@ -2,8 +2,8 @@ package com.zhc.mscauth.service.Impl;
 
 import java.util.List;
 import com.zhc.mscauth.service.PermissionService;
-import com.zhc.msccommon.Model.Vo.MenuVo;
-import com.zhc.msccommon.Model.Vo.Result;
+import com.zhc.msccommon.model.vo.MenuVo;
+import com.zhc.msccommon.model.vo.Result;
 import lombok.extern.slf4j.Slf4j;
 
 /**

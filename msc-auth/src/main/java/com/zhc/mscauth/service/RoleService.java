@@ -5,8 +5,8 @@ import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import com.zhc.mscauth.service.Impl.RoleServiceImpl;
-import com.zhc.msccommon.Model.Vo.Result;
-import com.zhc.msccommon.Model.Vo.RoleVo;
+import com.zhc.msccommon.model.vo.Result;
+import com.zhc.msccommon.model.vo.RoleVo;
 
 
 /**

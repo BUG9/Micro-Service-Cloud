@@ -6,8 +6,8 @@ import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import com.zhc.mscauth.service.Impl.PermissionServiceImpl;
-import com.zhc.msccommon.Model.Vo.MenuVo;
-import com.zhc.msccommon.Model.Vo.Result;
+import com.zhc.msccommon.model.vo.MenuVo;
+import com.zhc.msccommon.model.vo.Result;
 
 /**
  * Created by jingxian on 2018/7/17.

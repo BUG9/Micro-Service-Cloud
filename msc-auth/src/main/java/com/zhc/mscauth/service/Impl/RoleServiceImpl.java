@@ -2,8 +2,8 @@ package com.zhc.mscauth.service.Impl;
 
 import java.util.List;
 import com.zhc.mscauth.service.RoleService;
-import com.zhc.msccommon.Model.Vo.Result;
-import com.zhc.msccommon.Model.Vo.RoleVo;
+import com.zhc.msccommon.model.vo.Result;
+import com.zhc.msccommon.model.vo.RoleVo;
 import lombok.extern.slf4j.Slf4j;
 
 /**

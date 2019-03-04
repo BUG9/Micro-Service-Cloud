@@ -1,8 +1,8 @@
 package com.zhc.mscauth.service.Impl;
 
 import com.zhc.mscauth.service.UserService;
-import com.zhc.msccommon.Model.Vo.Result;
-import com.zhc.msccommon.Model.Vo.UserVo;
+import com.zhc.msccommon.model.vo.Result;
+import com.zhc.msccommon.model.vo.UserVo;
 import lombok.extern.slf4j.Slf4j;
 
 /**

@@ -1,4 +1,4 @@
-package com.zhc.msccommon.Model.Vo;
+package com.zhc.msccommon.model.vo;
 
 import java.io.Serializable;
 import java.util.HashMap;
