@@ -61,7 +61,7 @@
 		</dependency>
 		<dependency>
 			<groupId>com.zhc</groupId>
-			<artifactId>Micro-Service-Cloud-Common</artifactId>
+			<artifactId>micro-service-cloud-common</artifactId>
 			<version>1.0.0-SNAPSHOT</version>
 		</dependency>
 	</dependencies>

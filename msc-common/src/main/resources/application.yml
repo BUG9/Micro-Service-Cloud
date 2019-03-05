@@ -1,12 +1,19 @@
 server:
   port: 8888
 
-filePath: /var/www/html/app/
-##filePath: E:\MyDownloads\Download\
+##appFilePath: /var/www/html/app/
+appFilePath: E:\MyDownloads\Download\
+
+##firmwareFilePath: /var/www/html/firmware/
+firmwareFilePath: E:\MyDownloads\Downloads\
 
 spring:
   application:
     name: MscCommonService
+  http:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 500MB
 
 eureka:
   instance:

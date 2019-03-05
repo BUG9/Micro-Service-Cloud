@@ -7,11 +7,11 @@
 		<artifactId>Micro-Service-Cloud</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
-	<artifactId>micro-service-cloud-config</artifactId>
+	<artifactId>Micro-Service-Cloud-Config</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>msc-config</name>
+	<name>Micro-Service-Cloud-Config</name>
 	<description>Demo project for Spring Boot</description>
 
 	<dependencies>

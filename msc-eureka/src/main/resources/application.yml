@@ -40,7 +40,7 @@ eureka:
     register-with-eureka: false  # 当前的微服务不注册到eureka之中
     fetch-registry: false # 不通过eureka获取注册信息
     service-url:
-          defaultZone: http://msc-eureka-2:8001/eureka/
+          defaultZone: http://msc-eureka-1:8000/eureka/
   server:
       # 关闭自我保护模式
     enable-self-preservation: false
